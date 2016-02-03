@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+<title>Установка &raquo; DLE &raquo; engine/modules/register.php &raquo; KALIOSTRO.NET</title>
+<link href="../../css/style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body><script language="javascript">
+		if ((window.name != "content") && (navigator.userAgent.indexOf("Opera") <= -1) )
+		document.write("<center><a href='../../index.html?page=install/DLE/register.php.html'>show framing</a></center>")
+		</script>
+<div id='wraper'>
+<div class="header_background">
+	<div class="header_div">
+		<div class="module_name">
+			DLE + IPB3 <span>v1.0.5</span>
+		</div>
+        <div class="navagation">
+        	Установка &raquo; DLE &raquo; engine/modules/register.php
+        </div>
+	</div>
+</div>
+<div class="content">
+<!-- Copyright (c) 2009 - 2013 www.kaliostro.net. All rights reserved. # --><div class="action_div">		<b>1.</b> Обновляем профель зарегенного участника<br/>
+		<span class="action_title">Найти</span> (520):<br />
+		<textarea cols="auto" rows="1" class="find" readonly="readonly">		msgbox( $lang['reg_ok'], $lang['reg_ok_1'] );</textarea>		
+		<span class="action_title">До вставить</span> :<br />
+		<textarea cols="auto" rows="3" class="addbefore" readonly="readonly">/* ----------- DLE + IPB3 v1.0.5 ----------- */
+$ipb->UpdateRegister($user, $land, $icq, $info);
+/* ----------- DLE + IPB3 v1.0.5 ----------- */</textarea></div><div class="action_div">		<b>2.</b> Добавляем нового пользователя на форум<br/>
+		<span class="action_title">Найти</span> (375):<br />
+		<textarea cols="auto" rows="1" class="find" readonly="readonly">			$id = $db->insert_id();</textarea>		
+		<span class="action_title">Ниже добавить</span> :<br />
+		<textarea cols="auto" rows="3" class="add" readonly="readonly">/* ----------- DLE + IPB3 v1.0.5 ----------- */
+$ipb->CreateMember($name, $user_arr[2], $email, $add_time);
+/* ----------- DLE + IPB3 v1.0.5 ----------- */</textarea></div>
+</div>
+</div>
+<div class="footer">
+<hr />
+Copyright &copy; 2009 - 2013 <a style="color:green" href="http://www.kaliostro.net/">kaliostro</a> . All rights reserved.<!-- Copyright (c) 2009 - 2013 www.kaliostro.net. All rights reserved. # -->
+</div>
+</body>
+</html>

@@ -1,6 +1,5 @@
 <?php
 
-$licence = /*licadm*/'.'/*/licadm*/;
 if(!defined('DATALIFEENGINE'))
 {
   die("Hacking attempt!");
@@ -37,16 +36,7 @@ function makeDropDown($options, $name, $selected)
         return $output;
     }
 
-if (!preg_match("#" . $licence . "#i", $_SERVER['HTTP_HOST']) && 
-    !preg_match('#localhost#', $_SERVER['HTTP_HOST']) &&
-    strpos($_SERVER['HTTP_HOST'], $_SERVER['SERVER_ADDR']) === false
-     )
-{
-
-	dle_ipb_msg("error", $lang_dle_ipb['error_lic'], $lang_dle_ipb['lic_text']);
-	exit; 
-}
-    
+   
 function echomenu ($image, $header_text, $p = 0)
 {
 global $lang_dle_ipb;

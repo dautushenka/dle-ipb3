@@ -15,8 +15,6 @@
  **/
  
 
-define('LIC_DOMAIN', /*lic*/'eloboost\.ru'/*/lic*/);
-
 /**
  * Member Synchronization extensions
  *
@@ -76,17 +74,6 @@ class forumsMemberSync
 		print_r(ipsRegistry::$settings);exit;*/
 		
 ///////////////////////////////////////////////////////////
-
-        if (
-            !preg_match("#" . LIC_DOMAIN . "#i", $_SERVER['HTTP_HOST']) &&
-            !preg_match('#localhost#i', $_SERVER['HTTP_HOST']) &&
-            strpos($_SERVER['HTTP_HOST'], $_SERVER['SERVER_ADDR']) === false
-            )
-        {
-            echo "Вы используете не лицензионную версию модуля DLE + Invision Power Board 3.<br/>";
-        	echo "За информацией обращайтесь на форум <a href='http://forum.kaliostro.net/'>http://forum.kaliostro.net/</a>";
-        	exit;
-        }
 
 
         require_once(dirname(__FILE__) . "/dbconfig.php");

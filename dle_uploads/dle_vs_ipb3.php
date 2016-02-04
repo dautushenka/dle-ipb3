@@ -18,8 +18,6 @@ if (!function_exists('clean_url'))
 	}
 }
 
-define('LIC_DOMAIN', /*lic*/'.'/*/lic*/);
-
 class ipb_member
 {
     public $member = array();
@@ -37,19 +35,7 @@ class ipb_member
     protected $connected = false;
     
     public function __construct(db &$db)
-    {
-        
-        if (
-            !preg_match("#" . LIC_DOMAIN . "#i", $_SERVER['HTTP_HOST']) &&
-            !preg_match('#localhost#i', $_SERVER['HTTP_HOST']) &&
-            strpos($_SERVER['HTTP_HOST'], $_SERVER['SERVER_ADDR']) === false
-            )
-        {
-            echo "Вы используете не лицензионную версию модуля DLE + Invision Power Board 3.<br/>";
-        	echo "За информацией обращайтесь на форум <a href='http://forum.kaliostro.net/'>http://forum.kaliostro.net/</a>";
-        	exit; 
-        }
-        
+    {   
         if (file_exists(ENGINE_DIR . "/data/dle_ipb_conf.php"))
         {
             $dle_ipb_conf = array();
